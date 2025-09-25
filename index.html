@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tactical Ops: Prototype</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        background-color: #0a0a0a;
+        color: #e0e0e0;
+        font-family: 'Inter', sans-serif;
+        margin: 0;
+        overflow: hidden; /* Prevent scrollbars */
+      }
+      canvas {
+        display: block; /* Omit scrollbars */
+      }
+      #crosshair {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 4px;
+        height: 4px;
+        background-color: #00ffc6;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 100;
+        mix-blend-mode: difference;
+      }
+      .reloading-text {
+        position: fixed;
+        top: 55%;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #00ffc6;
+        font-family: 'Orbitron', sans-serif;
+        font-size: 1.5rem;
+        text-shadow: 0 0 5px #00ffc6;
+        z-index: 100;
+        pointer-events: none;
+      }
+      @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap');
+      .font-orbitron {
+        font-family: 'Orbitron', sans-serif;
+      }
+      .font-roboto-mono {
+        font-family: 'Roboto Mono', monospace;
+      }
+      .hud-border {
+        border: 1px solid rgba(0, 255, 198, 0.2);
+        box-shadow: 0 0 5px rgba(0, 255, 198, 0.2), inset 0 0 5px rgba(0, 255, 198, 0.2);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.20.0",
+    "three": "https://aistudiocdn.com/three@^0.167.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <div id="crosshair"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
